@@ -1,0 +1,3 @@
+github "JanGorman/Hippolyte"
+github "SDWebImage/SDWebImage"
+github "SnapKit/SnapKit" ~> 4.0.0

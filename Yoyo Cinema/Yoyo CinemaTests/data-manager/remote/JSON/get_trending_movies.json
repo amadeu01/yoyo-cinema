@@ -1,0 +1,408 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/z6KLDE72SxE1A8JcJTmmnWArOvR.jpg",
+            "genre_ids": [
+                28,
+                80,
+                53
+            ],
+            "id": 345887,
+            "original_language": "en",
+            "original_title": "The Equalizer 2",
+            "overview": "Robert McCall, who serves an unflinching justice for the exploited and oppressed, embarks on a relentless, globe-trotting quest for vengeance when a long-time girl friend is murdered.",
+            "poster_path": "/cQvc9N6JiMVKqol3wcYrGshsIdZ.jpg",
+            "release_date": "2018-07-19",
+            "title": "The Equalizer 2",
+            "video": false,
+            "vote_average": 6.2,
+            "vote_count": 764,
+            "popularity": 120.497
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/mabuNsGJgRuCTuGqjFkWe1xdu19.jpg",
+            "genre_ids": [
+                28,
+                12,
+                16,
+                10751
+            ],
+            "id": 260513,
+            "original_language": "en",
+            "original_title": "Incredibles 2",
+            "overview": "Elastigirl springs into action to save the day, while Mr. Incredible faces his greatest challenge yet – taking care of the problems of his three children.",
+            "poster_path": "/x1txcDXkcM65gl7w20PwYSxAYah.jpg",
+            "release_date": "2018-06-14",
+            "title": "Incredibles 2",
+            "video": false,
+            "vote_average": 7.6,
+            "vote_count": 3232,
+            "popularity": 158.568
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/rH79sB6Nkx4cMW3JzsUy7wK0rhX.jpg",
+            "genre_ids": [
+                28,
+                878,
+                53
+            ],
+            "id": 345940,
+            "original_language": "en",
+            "original_title": "The Meg",
+            "overview": "A deep sea submersible pilot revisits his past fears in the Mariana Trench, and accidentally unleashes the seventy foot ancestor of the Great White Shark believed to be extinct.",
+            "poster_path": "/eyWICPcxOuTcDDDbTMOZawoOn8d.jpg",
+            "release_date": "2018-08-09",
+            "title": "The Meg",
+            "video": false,
+            "vote_average": 6,
+            "vote_count": 1341,
+            "popularity": 121.311
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/oMKFQmoVgB69fyXfSMu0lGlHJP2.jpg",
+            "genre_ids": [
+                28
+            ],
+            "id": 447200,
+            "original_language": "en",
+            "original_title": "Skyscraper",
+            "overview": "Framed and on the run, a former FBI agent must save his family from a blazing fire in the world's tallest building.",
+            "poster_path": "/5LYSsOPzuP13201qSzMjNxi8FxN.jpg",
+            "release_date": "2018-07-11",
+            "title": "Skyscraper",
+            "video": false,
+            "vote_average": 6.1,
+            "vote_count": 1152,
+            "popularity": 97.102
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/uDt8bQ4lGVlabEx5Gl2cPzvy6qz.jpg",
+            "genre_ids": [
+                12,
+                16,
+                35,
+                14,
+                10751
+            ],
+            "id": 420814,
+            "original_language": "en",
+            "original_title": "Christopher Robin",
+            "overview": "Working-class family man Christopher Robin encounters his childhood friend Winnie-the-Pooh, who helps him to rediscover the joys of life.",
+            "poster_path": "/xR5w0he6czZkcAz459a4iPBqXGe.jpg",
+            "release_date": "2018-08-02",
+            "title": "Christopher Robin",
+            "video": false,
+            "vote_average": 7.5,
+            "vote_count": 389,
+            "popularity": 82.668
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/6P3c80EOm7BodndGBUAJHHsHKrp.jpg",
+            "genre_ids": [
+                28,
+                12,
+                35,
+                878,
+                10751
+            ],
+            "id": 363088,
+            "original_language": "en",
+            "original_title": "Ant-Man and the Wasp",
+            "overview": "Just when his time under house arrest is about to end, Scott Lang puts again his freedom at risk to help Hope van Dyne and Dr. Hank Pym dive into the quantum realm and try to accomplish, against time and any chance of success, a very dangerous rescue mission.",
+            "poster_path": "/rv1AWImgx386ULjcf62VYaW8zSt.jpg",
+            "release_date": "2018-07-04",
+            "title": "Ant-Man and the Wasp",
+            "video": false,
+            "vote_average": 6.9,
+            "vote_count": 3103,
+            "popularity": 105.364
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/fgsHxz21B27hOOqQBiw9L6yWcM7.jpg",
+            "genre_ids": [
+                27,
+                9648,
+                53
+            ],
+            "id": 439079,
+            "original_language": "en",
+            "original_title": "The Nun",
+            "overview": "When a young nun at a cloistered abbey in Romania takes her own life, a priest with a haunted past and a novitiate on the threshold of her final vows are sent by the Vatican to investigate. Together they uncover the order’s unholy secret. Risking not only their lives but their faith and their very souls, they confront a malevolent force in the form of the same demonic nun that first terrorized audiences in “The Conjuring 2” as the abbey becomes a horrific battleground between the living and the damned.",
+            "poster_path": "/sFC1ElvoKGdHJIWRpNB3xWJ9lJA.jpg",
+            "release_date": "2018-09-05",
+            "title": "The Nun",
+            "video": false,
+            "vote_average": 5.8,
+            "vote_count": 1274,
+            "popularity": 162.344
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/A2rIVEV2jOzb4smx8hby1u9UwAm.jpg",
+            "genre_ids": [
+                28,
+                53
+            ],
+            "id": 347375,
+            "original_language": "en",
+            "original_title": "Mile 22",
+            "overview": "An elite group of American operatives, aided by a top-secret tactical command team, must transport an asset who holds life-threatening information to an extraction point 22 miles away through the hostile streets of an Asian city.",
+            "poster_path": "/2L8ehd95eSW9x7KINYtZmRkAlrZ.jpg",
+            "release_date": "2018-08-16",
+            "title": "Mile 22",
+            "video": false,
+            "vote_average": 5.8,
+            "vote_count": 223,
+            "popularity": 128.571
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ims2v8C99dEAo2CUydueb54T9ai.jpg",
+            "genre_ids": [
+                80,
+                18,
+                9648,
+                53
+            ],
+            "id": 433498,
+            "original_language": "en",
+            "original_title": "Papillon",
+            "overview": "Henri \"Papillon\" Charrière is convicted in Paris for a murder he did not commit. Sentenced to life imprisonment in the penal colony of French Guiana, he becomes obsessed with escaping. After planning and executing a series of treacherous yet failed attempts, he's sent to the notorious prison Devil's Island, a place from which no one has ever escaped.",
+            "poster_path": "/ahF5c6vyP8HWMqIwlhecbRALkjq.jpg",
+            "release_date": "2018-07-26",
+            "title": "Papillon",
+            "video": false,
+            "vote_average": 7.7,
+            "vote_count": 154,
+            "popularity": 78.954
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/sDrdMSDpysmJmsixcwaf07jDlq2.jpg",
+            "genre_ids": [
+                28,
+                18,
+                53
+            ],
+            "id": 529210,
+            "original_language": "es",
+            "original_title": "La sombra de la ley",
+            "overview": "In 1921 Barcelona, amid unrest between anarchists and the police, a cop plays both sides to learn who stole army weapons that could ignite a civil war.",
+            "poster_path": "/qaDxb86sW3MEV2ox3sojFa4LgV6.jpg",
+            "release_date": "2018-10-11",
+            "title": "La sombra de la ley",
+            "video": false,
+            "vote_average": 6.7,
+            "vote_count": 8,
+            "popularity": 4.483
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/jNUpYq2jRSwQM89vST9yQZelMSu.jpg",
+            "genre_ids": [
+                18,
+                10402
+            ],
+            "id": 424694,
+            "original_language": "en",
+            "original_title": "Bohemian Rhapsody",
+            "overview": "Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist John Deacon take the music world by storm when they form the rock 'n' roll band Queen in 1970. Hit songs become instant classics. When Mercury's increasingly wild lifestyle starts to spiral out of control, Queen soon faces its greatest challenge yet – finding a way to keep the band together amid the success and excess.",
+            "poster_path": "/jf7jiy0rDVn1ljUwv3pWKousQ1p.jpg",
+            "release_date": "2018-10-24",
+            "title": "Bohemian Rhapsody",
+            "video": false,
+            "vote_average": 8.7,
+            "vote_count": 128,
+            "popularity": 87.623
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/nKMeTdm72LQ756Eq20uTjF1zDXu.jpg",
+            "genre_ids": [
+                12,
+                18
+            ],
+            "id": 399360,
+            "original_language": "en",
+            "original_title": "Alpha",
+            "overview": "After a hunting expedition goes awry, a young caveman struggles against the elements to find his way home.",
+            "poster_path": "/afdZAIcAQscziqVtsEoh2PwsYTW.jpg",
+            "release_date": "2018-08-17",
+            "title": "Alpha",
+            "video": false,
+            "vote_average": 5.4,
+            "vote_count": 384,
+            "popularity": 93.629
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/5BxrMNGl3YDiWgHCVJu8iLQoJDM.jpg",
+            "genre_ids": [
+                878,
+                53
+            ],
+            "id": 445651,
+            "original_language": "en",
+            "original_title": "The Darkest Minds",
+            "overview": "After a disease kills 98% of America's children, the surviving 2% develop superpowers and are placed in internment camps. A 16-year-old girl escapes her camp and joins a group of other teens on the run from the government.",
+            "poster_path": "/94RaS52zmsqaiAe1TG20pdbJCZr.jpg",
+            "release_date": "2018-08-02",
+            "title": "The Darkest Minds",
+            "video": false,
+            "vote_average": 6.8,
+            "vote_count": 557,
+            "popularity": 48.275
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg",
+            "genre_ids": [
+                28,
+                12,
+                14,
+                878
+            ],
+            "id": 299536,
+            "original_language": "en",
+            "original_title": "Avengers: Infinity War",
+            "overview": "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
+            "poster_path": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+            "release_date": "2018-04-25",
+            "title": "Avengers: Infinity War",
+            "video": false,
+            "vote_average": 8.3,
+            "vote_count": 9077,
+            "popularity": 110.815
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/5DUqFLgkLsJxyqPCAcgTivZy2SX.jpg",
+            "genre_ids": [
+                28,
+                12,
+                878
+            ],
+            "id": 348350,
+            "original_language": "en",
+            "original_title": "Solo: A Star Wars Story",
+            "overview": "Through a series of daring escapades deep within a dark and dangerous criminal underworld, Han Solo meets his mighty future copilot Chewbacca and encounters the notorious gambler Lando Calrissian.",
+            "poster_path": "/3IGbjc5ZC5yxim5W0sFING2kdcz.jpg",
+            "release_date": "2018-05-15",
+            "title": "Solo: A Star Wars Story",
+            "video": false,
+            "vote_average": 6.7,
+            "vote_count": 2352,
+            "popularity": 46.529
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/1SjsVcGO2T2cCrhlhXi8gxQl7jx.jpg",
+            "genre_ids": [
+                16,
+                10751
+            ],
+            "id": 474395,
+            "original_language": "en",
+            "original_title": "Teen Titans Go! To the Movies",
+            "overview": "It seems that all the major superheroes out there are starring in their own movies -- all but the Teen Titans. Robin is bound and determined to remedy that situation by becoming a star instead of a sidekick. With a few madcap ideas and a song in their hearts, the Teen Titans head to Hollywood to fulfill their dreams. Things soon go awry, however, when a supervillain plans to take over the planet -- putting the very fate of the young heroes on the line.",
+            "poster_path": "/AiEuNw3Lg0PIPNUQ3PIWWElwGcY.jpg",
+            "release_date": "2018-07-27",
+            "title": "Teen Titans Go! To the Movies",
+            "video": false,
+            "vote_average": 7.1,
+            "vote_count": 114,
+            "popularity": 32.285
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/uN6v3Hz4qI2CIqT1Ro4vPgAbub3.jpg",
+            "genre_ids": [
+                28,
+                12,
+                35
+            ],
+            "id": 454992,
+            "original_language": "en",
+            "original_title": "The Spy Who Dumped Me",
+            "overview": "Audrey and Morgan are best friends who unwittingly become entangled in an international conspiracy when one of the women discovers the boyfriend who dumped her was actually a spy.",
+            "poster_path": "/2lIr27lBdxCpzYDl6WUHzzD6l6H.jpg",
+            "release_date": "2018-08-02",
+            "title": "The Spy Who Dumped Me",
+            "video": false,
+            "vote_average": 6.4,
+            "vote_count": 357,
+            "popularity": 58.094
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/3s9O5af2xWKWR5JzP2iJZpZeQQg.jpg",
+            "genre_ids": [
+                28,
+                12,
+                878
+            ],
+            "id": 351286,
+            "original_language": "en",
+            "original_title": "Jurassic World: Fallen Kingdom",
+            "overview": "Three years after the demise of Jurassic World, a volcanic eruption threatens the remaining dinosaurs on the isla Nublar, so Claire Dearing, the former park manager, recruits Owen Grady to help prevent the extinction of the dinosaurs once again.",
+            "poster_path": "/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg",
+            "release_date": "2018-06-06",
+            "title": "Jurassic World: Fallen Kingdom",
+            "video": false,
+            "vote_average": 6.5,
+            "vote_count": 4148,
+            "popularity": 63.228
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/tw4iYlxu0FIX4kmlFlprScdSfeA.jpg",
+            "genre_ids": [
+                28,
+                12,
+                14
+            ],
+            "id": 522417,
+            "original_language": "en",
+            "original_title": "The Scorpion King: Book of Souls",
+            "overview": "The Scorpion King teams up with a female warrior named Tala, who is the sister of The Nubian King. Together they search for a legendary relic known as The Book of Souls, which will allow them to put an end to an evil warlord.",
+            "poster_path": "/mSviUMejPmerwoQxdj7wR4Ky1Fd.jpg",
+            "release_date": "2018-10-23",
+            "title": "The Scorpion King: Book of Souls",
+            "video": false,
+            "vote_average": 5.2,
+            "vote_count": 18,
+            "popularity": 65.894
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/bHiAoVHdoubtWUnNkQMuAWdb02O.jpg",
+            "genre_ids": [
+                12,
+                14,
+                878,
+                10751
+            ],
+            "id": 422742,
+            "original_language": "de",
+            "original_title": "Jim Knopf und Lukas der Lokomotivführer",
+            "overview": "An orphan boy in search of his origin. A young princess held prisoner in deadly Dragon City. Jim and his friend Luke discovering mysterious lands on the quest of a lifetime.",
+            "poster_path": "/t77guD6TYpl9Z4CCwlXDnrGJzX7.jpg",
+            "release_date": "2018-03-29",
+            "title": "Jim Button and Luke the Engine Driver",
+            "video": false,
+            "vote_average": 7.9,
+            "vote_count": 8,
+            "popularity": 2.143
+        }
+    ],
+    "total_pages": 1000,
+    "total_results": 20000
+}
