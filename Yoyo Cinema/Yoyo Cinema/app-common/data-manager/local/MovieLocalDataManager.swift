@@ -105,11 +105,14 @@ public class MovieLocalDataManager {
         object.backdropPath = movieEntity.backdropPath
         object.releaseDate = movieEntity.releaseDate
         object.originalTitle = movieEntity.originalTitle
+        object.backdropImageUrl = movieEntity.backdropUrl
+        object.posterImageUrl = movieEntity.posterUrl
         object.video = NSNumber(booleanLiteral: movieEntity.video)
         object.adult = NSNumber(booleanLiteral: movieEntity.adult)
         object.voteAverage = movieEntity.voteAverage
         object.popularity = movieEntity.popularity
         object.originalLanguage = movieEntity.originalLanguage
+        object.tagline = movieEntity.tagline
         object.favorite = NSNumber(booleanLiteral: movieEntity.favorite)
     }
     

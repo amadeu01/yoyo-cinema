@@ -12,4 +12,5 @@ public protocol FavoriteMovieLocalGatewayProtocol: class {
     func isMovieFavorited(_ movie: MovieEntity) -> Bool
     func retriveAllFavoriteMovies() -> [MovieEntity]
     func favorite(movie: MovieEntity)
+    func unFavorite(movie: MovieEntity)
 }

@@ -210,4 +210,30 @@ extension MovieEntity {
             backdropUrl: backdropUrl)
     }
     
+    public func unFavorited() -> MovieEntity {
+        return MovieEntity(
+            id: id,
+            title: title,
+            originalTitle: originalTitle,
+            adult: adult,
+            video: video,
+            releaseDate: releaseDate,
+            voteCount: voteCount,
+            backdropPath: backdropPath,
+            budget: budget,
+            genres: genres,
+            homepage: homepage,
+            originalLanguage: originalLanguage,
+            overview: overview,
+            popularity: popularity,
+            posterPath: posterPath,
+            revenue: revenue,
+            runtime: runtime,
+            status: status,
+            tagline: tagline,
+            voteAverage: voteAverage,
+            favorite: false,
+            posterUrl: posterUrl,
+            backdropUrl: backdropUrl)
+    }
 }

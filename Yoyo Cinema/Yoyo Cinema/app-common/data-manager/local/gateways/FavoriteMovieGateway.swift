@@ -29,4 +29,7 @@ public final class FavoriteMovieGateway: FavoriteMovieLocalGatewayProtocol {
         try! localDataManager.saveMovie(for: movie.favorited())
     }
     
+    public func unFavorite(movie: MovieEntity) {
+        try! localDataManager.saveMovie(for: movie.unFavorited())
+    }
 }

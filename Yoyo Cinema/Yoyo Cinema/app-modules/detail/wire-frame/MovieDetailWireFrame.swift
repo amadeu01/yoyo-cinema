@@ -20,6 +20,7 @@ public class MovieDetailWireFrame: MovieDetailWireFrameProtocol {
         interactor.gateway = localGateway
         presenter.interactor = interactor
         detailView.presenter = presenter
+        presenter.view = detailView
         
         return detailView
     }

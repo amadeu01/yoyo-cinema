@@ -72,7 +72,9 @@ class MovieListView: UITableView, MovieListViewProtocol {
     func showMovies(_ movies: [MovieEntity]) {
         self.movies = Set(movies)
         self.moviesData = [MovieEntity](self.movies)
-        self.reloadData()
+        DispatchQueue.main.async {
+            self.reloadData()
+        }
     }
     
 }
@@ -91,9 +93,7 @@ extension MovieListView: UITableViewDataSource {
         if let cell = dequeueReusableCell(withIdentifier:
             MovieTableViewCell.idendifier) as? MovieTableViewCell {
             cell.movie = moviesData[indexPath.row]
-            let detail = MovieDetailWireFrame.createMovieDetailModule(for: moviesData[indexPath.row])
-            cell.movieCard.shouldPresent(detail as? UIViewController, from: parent, fullscreen: true)
-            
+            cell.movieCard.delegate = self
             return cell
         } else {
             return UITableViewCell()
@@ -104,5 +104,17 @@ extension MovieListView: UITableViewDataSource {
 extension MovieListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 400
+    }
+}
+
+extension MovieListView: CardDelegate {
+    func contentViewControllerForCard(card: Card) -> UIViewController {
+        card.shouldPresent(from: parent)
+        if let card = card as? MovieCard {
+            let detail = MovieDetailWireFrame.createMovieDetailModule(for: card.movie ?? MovieEntity.empty)
+            return detail as? UIViewController ?? UIViewController()
+        }
+        
+        return UIViewController()
     }
 }

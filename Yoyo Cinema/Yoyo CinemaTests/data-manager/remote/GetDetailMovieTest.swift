@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import YoyoFramework
+@testable import Yoyo_Cinema
 
 class GetDetailMovieTest: XCTestCase {
     
@@ -15,7 +15,8 @@ class GetDetailMovieTest: XCTestCase {
         let getMovieExpectation = self.expectation(description: "Get Movie Detail")
         
         let getMovieGateway = GetMovieDetail(webClient: WebClient.shared, for: 11) { result, error in
-            print(result)
+            XCTAssertNil(error)
+            XCTAssertNotNil(result)
             getMovieExpectation.fulfill()
         }
         

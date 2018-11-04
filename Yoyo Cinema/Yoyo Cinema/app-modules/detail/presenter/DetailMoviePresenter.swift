@@ -20,9 +20,17 @@ final class MovieDetailPresenter: MovieDetailPresenterProtocol {
     func favorited(_ movie: MovieEntity) {
         interactor?.favorite(movie.favorited())
     }
+    
+    func unFavorited(_ movie: MovieEntity) {
+        interactor?.unFavorite(movie.unFavorited())
+    }
 }
 
 extension MovieDetailPresenter: MovieDetailInteractorOutputProtocol {
+    func movieDidChange(_ movie: MovieEntity) {
+        view?.showMovieDetail(for: movie)
+    }
+    
     func onError() {
         
     }

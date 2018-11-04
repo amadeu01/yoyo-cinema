@@ -14,6 +14,7 @@ import UIKit
 @objc public protocol CardDelegate {
     
     @objc optional func cardDidTapInside(card: Card)
+    @objc optional func contentViewControllerForCard(card: Card) -> UIViewController
     @objc optional func cardWillShowDetailView(card: Card)
     @objc optional func cardDidShowDetailView(card: Card)
     @objc optional func cardWillCloseDetailView(card: Card)
@@ -91,20 +92,11 @@ import UIKit
             if backgroundColor != UIColor.clear { backgroundColor = UIColor.clear }
         }
     }
-    /**
-     contentViewController  -> The view controller to present when the card is tapped
-     from                   -> Your current ViewController (self)
-     */
-    public func shouldPresent( _ contentViewController: UIViewController?, from superVC: UIViewController?, fullscreen: Bool = false) {
-        if let content = contentViewController {
-            self.superVC = superVC
-            detailVC.addChild(content)
-            detailVC.detailView = content.view
-            detailVC.card = self
-            detailVC.delegate = self.delegate
-            detailVC.isFullscreen = fullscreen
-        }
+    
+    public func shouldPresent(from superVC: UIViewController?, fullscreen: Bool = false) {
+        self.superVC = superVC
     }
+    
     /**
      If the card should display parallax effect.
      */
@@ -191,10 +183,20 @@ import UIKit
     @objc func cardTapped() {
         self.delegate?.cardDidTapInside?(card: self)
         
+        let content = self.delegate?.contentViewControllerForCard?(card: self) ?? UIViewController()
+        
+        let detailVC = DetailViewController()
+        detailVC.transitioningDelegate = self
+        detailVC.addChild(content)
+        detailVC.detailView = content.view
+        detailVC.delegate = self.delegate
+        detailVC.isFullscreen = true
+        detailVC.transitioningDelegate = self
+        detailVC.card = self
+        
         if let vc = superVC {
-            vc.present(self.detailVC, animated: true, completion: nil)
+            vc.present(detailVC, animated: true, completion: nil)
         } else {
-            
             resetAnimated()
         }
     }

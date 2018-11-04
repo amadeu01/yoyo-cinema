@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import YoyoFramework
+@testable import Yoyo_Cinema
 
 class SearchMovieTest: XCTestCase {
     
@@ -18,7 +18,7 @@ class SearchMovieTest: XCTestCase {
     func testSearchMovieTestSucess() {
         let searchMovieExpectation = self.expectation(description: "Search Movie")
         
-        let searchGateway = SearchMovie(webClient: WebClient.shared, query: "star") { result, error in
+        let searchGateway = SearchMovieGateway(webClient: WebClient.shared, query: "star") { result, error in
             XCTAssertNil(error)
             XCTAssertNotNil(result)
             searchMovieExpectation.fulfill()

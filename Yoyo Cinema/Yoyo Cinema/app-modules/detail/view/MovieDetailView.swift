@@ -19,6 +19,7 @@ public final class MovieDetailView: UIViewController, MovieDetailViewProtocol {
     let container = UIScrollView()
     var overviewTextLabel = UILabel()
     let overviewLabel = UILabel()
+    let favoriteButton = UIButton(type: .custom)
     
     public func showError() {
         
@@ -37,17 +38,23 @@ public final class MovieDetailView: UIViewController, MovieDetailViewProtocol {
         addScrollView()
         addOverview()
         addFavoriteButton()
-        
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let movie = movieEntity {
             showMovieDetail(for: movie)
         }
     }
     
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+    }
+    
     public override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
         container.contentSize = CGSize(width: self.view.frame.width,
-                                       height: 700)
+                                       height: 200)
         updateOverviewTextConstraint()
     }
     
@@ -92,32 +99,48 @@ public final class MovieDetailView: UIViewController, MovieDetailViewProtocol {
     }
     
     func addFavoriteButton() {
-        let button = UIButton(type: .custom)
-        button.setTitle("Add to Favorites", for: .normal)
-        button.backgroundColor = UIColor.lightDark
-        button.tintColor = UIColor.white
-        button.layer.borderColor = UIColor.clear.cgColor
-        button.layer.borderWidth = 1
-        button.layer.cornerRadius = 15
-        button.addTarget(self, action: #selector(self.addFavorite), for: UIControl.Event.touchUpInside)
+        favoriteButton.setTitle("Add to Favorites", for: .normal)
+        favoriteButton.backgroundColor = UIColor.lightDark
+        favoriteButton.tintColor = UIColor.white
+        favoriteButton.layer.borderColor = UIColor.clear.cgColor
+        favoriteButton.layer.borderWidth = 1
+        favoriteButton.layer.cornerRadius = 15
+        favoriteButton.addTarget(self, action: #selector(self.favoriteAction),
+                                 for: UIControl.Event.touchUpInside)
         
-        self.container.addSubview(button)
+        self.container.addSubview(favoriteButton)
         
-        button.snp.makeConstraints { make in
+        favoriteButton.snp.makeConstraints { make in
             make.top.equalTo(overviewTextLabel.snp.bottom).inset(15)
             make.centerX.equalToSuperview()
             make.height.equalTo(30)
-            make.width.equalTo(140)
+            make.width.equalTo(150)
         }
     }
     
-    @objc func addFavorite() {
-        presenter?.favorited(movieEntity)
+    @objc func favoriteAction() {
+        if movieEntity.favorite {
+            presenter?.unFavorited(movieEntity)
+        } else {
+            presenter?.favorited(movieEntity)
+        }
     }
     
     public func showMovieDetail(for movieEntity: MovieEntity) {
         self.movieEntity = movieEntity
         overviewTextLabel.text = movieEntity.overview
+        updateButtonLabel()
+    }
+    
+    func updateButtonLabel() {
+        if movieEntity.favorite {
+            favoriteButton.setTitle("Remove from Favorites", for: .normal)
+            favoriteButton.snp.updateConstraints { make in
+                make.width.equalTo(200)
+            }
+        } else {
+            favoriteButton.setTitle("Add to Favorites", for: .normal)
+        }
     }
     
     func updateOverviewTextConstraint() {

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import YoyoFramework
+@testable import Yoyo_Cinema
 
 class JsonDecodeTest: XCTestCase {
     fileprivate let resourceLoader: ResourceLoader = ResourceLoader()
@@ -35,6 +35,15 @@ class JsonDecodeTest: XCTestCase {
         XCTAssertEqual(176, searchMovieResponse.totalResults)
         XCTAssertEqual(9, searchMovieResponse.totalPages)
         XCTAssertEqual(BetterStartRunningResultMovie, searchMovieResponse.results?.first)
+    }
+    
+    func testShouldBeAbleToDecodeApiConfigurationResponse() {
+        let apiResponse = try! JSONDecoder()
+            .decode(TMDBAPIConfigurationResponse.self,
+                    from: resourceLoader.loadJsonFile("get_api_configuration"))
+        
+        XCTAssertEqual(ApiConfig, apiResponse)
+        
     }
     
 }

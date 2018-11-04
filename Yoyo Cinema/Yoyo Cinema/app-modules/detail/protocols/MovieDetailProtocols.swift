@@ -35,12 +35,16 @@ public protocol MovieDetailPresenterProtocol: class {
     func viewDidLoad()
     
     func favorited(_ movie: MovieEntity)
+    
+    func unFavorited(_ movie: MovieEntity)
 }
 
 // MARK: - Interactors Protocol
 
 public protocol MovieDetailInteractorOutputProtocol: class {
     func onError()
+    
+    func movieDidChange(_ movie: MovieEntity)
 }
 
 public protocol MovieDetailInteractorInputProtocol: class {
@@ -48,4 +52,6 @@ public protocol MovieDetailInteractorInputProtocol: class {
     var gateway: FavoriteMovieLocalGatewayProtocol? { get set }
     
     func favorite(_ movie: MovieEntity)
+    
+    func unFavorite(_ movie: MovieEntity)
 }

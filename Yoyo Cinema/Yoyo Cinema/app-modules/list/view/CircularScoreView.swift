@@ -91,7 +91,6 @@ final class CircularScoreView: UIView {
         
         basicAnimation.duration = animationDuration
         basicAnimation.toValue = finalScore
-        print(finalScore)
         
         scorePath.add(basicAnimation, forKey: "strokeEnd")
     }

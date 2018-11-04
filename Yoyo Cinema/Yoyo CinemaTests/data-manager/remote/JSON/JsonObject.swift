@@ -6,7 +6,7 @@
 //  Copyright © 2018 Amadeu Cavalcante Filho. All rights reserved.
 //
 
-@testable import YoyoFramework
+@testable import Yoyo_Cinema
 
 
 /*
@@ -30,7 +30,7 @@ let BetterStartRunningResultMovie =
     MovieResult(adult: false,
                 backdropPath: "/qRocYlYL9saXW6Eq1bD08rDhXlJ.jpg",
                 genreIDS: [18, 35], id: 482088,
-                originalLanguage: Language.english,
+                originalLanguage: "en",
                 originalTitle: "Better Start Running",
                 overview: "An eclectic band of misfits becomes an unlikely family as they take a wild journey in the name of love while on the run from an overzealous FBI duo who want them dead or alive - preferably dead.",
                 posterPath: "/wv3U9nSjJDWPoSK99da6X8ypJAs.jpg",
@@ -84,7 +84,7 @@ let TheEqualizer2Movie = MovieResult(
     backdropPath: "/z6KLDE72SxE1A8JcJTmmnWArOvR.jpg",
     genreIDS: [28, 80, 53],
     id: 345887,
-    originalLanguage: Language.english,
+    originalLanguage: "en",
     originalTitle: "The Equalizer 2",
     overview: "Robert McCall, who serves an unflinching justice for the exploited and oppressed, embarks on a relentless, globe-trotting quest for vengeance when a long-time girl friend is murdered.",
     posterPath: "/cQvc9N6JiMVKqol3wcYrGshsIdZ.jpg",
@@ -95,3 +95,68 @@ let TheEqualizer2Movie = MovieResult(
     voteCount: 764,
     popularity: 120.487)
 
+/*
+ {
+ "images": {
+ "base_url": "http://image.tmdb.org/t/p/",
+ "secure_base_url": "https://image.tmdb.org/t/p/",
+ "backdrop_sizes": [ "w300", "w780", "w1280", "original" ],
+ "logo_sizes": [ "w45", "w92", "w154", "w185", "w300", "w500", "original" ],
+ "poster_sizes": [ "w92", "w154", "w185", "w342", "w500", "w780", "original"],
+ "profile_sizes": [ "w45", "w185", "h632", "original" ],
+ "still_sizes": [ "w92", "w185", "w300", "original"]
+ },
+ "change_keys": [ "adult", "air_date", "also_known_as", "type", "video", "videos" ]
+ }
+
+ */
+
+let ApiConfig = TMDBAPIConfigurationResponse(
+    images: Images(
+        baseURL: "http://image.tmdb.org/t/p/",
+        secureBaseURL: "https://image.tmdb.org/t/p/",
+        backdropSizes: [ "w300", "w780", "w1280", "original" ],
+        logoSizes: [ "w45", "w92", "w154", "w185", "w300", "w500", "original" ],
+        posterSizes: [ "w92", "w154", "w185", "w342", "w500", "w780", "original"],
+        profileSizes: [ "w45", "w185", "h632", "original" ],
+        stillSizes: [ "w92", "w185", "w300", "original"]),
+    changeKeys: [ "adult", "air_date", "also_known_as", "type", "video", "videos" ])
+
+
+public func adoptEquatable(_ subject: Any) {
+    let mirror = Mirror(reflecting: subject)
+    
+    let typeName: String = {
+        let fullTypeName = String(reflecting: mirror.subjectType)
+        let typeNameParts = fullTypeName.components(separatedBy: ".")
+        let hasModulePrefix = typeNameParts.count > 1
+        return hasModulePrefix
+            ? typeNameParts.dropFirst().joined(separator: ".")
+            : fullTypeName
+    }()
+    
+    let propertyNames = mirror.children.map { $0.label ?? "" }
+    
+    // Associate an indentation level with each snippet of code.
+    typealias TemplateGroup = [(Int, String)]
+    let templateGroups: [TemplateGroup] = [
+        [(0, "extension \(typeName): Equatable {")],
+        [(1, "public static func ==(lhs: \(typeName), rhs: \(typeName)) -> Bool {")],
+        propertyNames.map { (2, "guard lhs.\($0) == rhs.\($0) else { return false }") },
+        [(2, "return true")],
+        [(1, "}")],
+        [(0, "}")]
+    ]
+    
+    // Apply indentation to each line of code while flattening the list.
+    let indent = "    "
+    let linesOfCode = templateGroups.flatMap { templateGroup -> [String] in
+        return templateGroup.map { (indentLevel: Int, code: String) -> String in
+            let indentation = String(repeating: indent, count: indentLevel)
+            return "\(indentation)\(code)"
+        }
+    }
+    
+    let sourceCode = linesOfCode.joined(separator: "\n")
+    print(sourceCode)
+}

@@ -95,7 +95,8 @@ internal class DetailViewController: UIViewController {
                                     y: scrollView.frame.minY + 20,
                                     width: 40,
                                     height: 40)
-
+            print(scrollView.contentSize)
+            print(detail.frame)
         }
         
         self.delegate?.cardDidShowDetailView?(card: self.card)

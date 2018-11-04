@@ -7,15 +7,15 @@
 //
 
 import Foundation
-@testable import YoyoFramework
+@testable import Yoyo_Cinema
 
 public final class MockWebClient: WebClientProtocol {
-    public var fetchDataInvoked = false
-    public var returnData: Data? = nil
-    public var returnError: NetworkError? = nil
+    public var fetchDataInvokedTimes = 0
+    public var returnData = [Data]()
+    public var returnError = [NetworkError]()
     
     public func fetchData(url: URL, queue: DispatchQueue, _ completionHandler: @escaping (Data?, NetworkError?) -> Void) {
-        fetchDataInvoked = true
-        completionHandler(returnData, returnError)
+        fetchDataInvokedTimes += 1
+        completionHandler(returnData.popLast(), returnError.popLast())
     }
 }

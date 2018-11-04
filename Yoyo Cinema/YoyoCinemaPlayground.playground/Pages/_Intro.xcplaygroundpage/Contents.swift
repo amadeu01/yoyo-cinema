@@ -1,3 +1,4 @@
 import Foundation
+@testable import YoyoFramework
 
-var str = "Hello, playground"
+

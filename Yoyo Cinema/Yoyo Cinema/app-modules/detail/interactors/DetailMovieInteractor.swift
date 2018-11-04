@@ -15,5 +15,11 @@ final class DetailMovieInteractor: MovieDetailInteractorInputProtocol {
     
     func favorite(_ movie: MovieEntity) {
         gateway?.favorite(movie: movie)
+        presenter?.movieDidChange(movie.favorited())
+    }
+    
+    func unFavorite(_ movie: MovieEntity) {
+        gateway?.unFavorite(movie: movie)
+        presenter?.movieDidChange(movie.unFavorited())
     }
 }

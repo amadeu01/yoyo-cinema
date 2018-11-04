@@ -36,6 +36,7 @@ class MovieTableViewCell: UITableViewCell {
     func updateMovie() {
         self.subviews.forEach { $0.removeFromSuperview() }
         
+        movieCard.movie = movie
         movieCard.backgroundColor = UIColor.lightDark
         movieCard.blurEffect = .extraLight
         movieCard.subtitleSize = 16

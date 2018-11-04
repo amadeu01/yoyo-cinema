@@ -11,6 +11,8 @@ import UIKit
 
 final class MovieCard: Card {
     
+    var movie: MovieEntity?
+    
     var title: String = "" {
         didSet {
             titleLbl.text = title
@@ -22,7 +24,6 @@ final class MovieCard: Card {
     var subtitle: String = "" {
         didSet {
             subtitleLbl.text = subtitle.uppercased()
-            print(subtitle)
         }
     }
     

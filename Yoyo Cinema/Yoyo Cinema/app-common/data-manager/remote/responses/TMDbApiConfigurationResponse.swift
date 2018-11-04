@@ -34,3 +34,24 @@ struct Images: Codable {
         case stillSizes = "still_sizes"
     }
 }
+
+extension TMDBAPIConfigurationResponse: Equatable {
+    public static func ==(lhs: TMDBAPIConfigurationResponse, rhs: TMDBAPIConfigurationResponse) -> Bool {
+        guard lhs.images == rhs.images else { return false }
+        guard lhs.changeKeys == rhs.changeKeys else { return false }
+        return true
+    }
+}
+
+extension Images: Equatable {
+    public static func ==(lhs: Images, rhs: Images) -> Bool {
+        guard lhs.baseURL == rhs.baseURL else { return false }
+        guard lhs.secureBaseURL == rhs.secureBaseURL else { return false }
+        guard lhs.backdropSizes == rhs.backdropSizes else { return false }
+        guard lhs.logoSizes == rhs.logoSizes else { return false }
+        guard lhs.posterSizes == rhs.posterSizes else { return false }
+        guard lhs.profileSizes == rhs.profileSizes else { return false }
+        guard lhs.stillSizes == rhs.stillSizes else { return false }
+        return true
+    }
+}
