@@ -53,7 +53,6 @@ extension SearchMoviePresenter: SearchMovieInteractorOutputProtocol {
         if movieQuery == query {
             view?.movieList?.showMovies(movies)
             view?.movieList?.hideLoading()
-            currentPage += 1
         }
     }
 }

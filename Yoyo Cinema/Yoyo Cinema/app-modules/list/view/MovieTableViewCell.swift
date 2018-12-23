@@ -44,6 +44,7 @@ class MovieTableViewCell: UITableViewCell {
         
         movieCard.title = movie?.title ?? ""
         movieCard.subtitle = movie?.releaseDate ?? ""
+        movieCard.movieScore = Float((movie?.voteAverage ?? 0)/10)
         movieCard.backgroundImage = UIImage(named: "film-poster-placeholder")
         movieCard.backgroundIV.contentMode = .scaleAspectFit
         

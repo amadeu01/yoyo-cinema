@@ -30,6 +30,7 @@ var StarWars = MovieEntity(
     status: "Released",
     tagline: "A long time ago in a galaxy far, far away...",
     voteAverage: 8.2,
+    favorite: false,
     posterUrl: nil,
     backdropUrl: nil)
 

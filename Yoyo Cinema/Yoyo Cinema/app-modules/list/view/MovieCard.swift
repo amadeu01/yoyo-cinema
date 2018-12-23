@@ -56,7 +56,7 @@ final class MovieCard: Card {
     var blurV = UIVisualEffectView()
     var vibrancyV = UIVisualEffectView()
     var iconIV = UIView()
-    var scoreView: CircularScoreView = CircularScoreView()
+    var scoreView = CircularScoreView()
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,8 +78,6 @@ final class MovieCard: Card {
         blurV.contentView.addSubview(vibrancyV)
         blurV.contentView.addSubview(subtitleLbl)
         blurV.contentView.addSubview(scoreView)
-        blurV.contentView.addSubview(iconIV)
-        iconIV.addSubview(scoreView)
     }
     
     override func draw(_ rect: CGRect) {
@@ -131,10 +129,10 @@ final class MovieCard: Card {
                                    width: gimme.X(80),
                                    height: gimme.Y(26))
         
-        iconIV.frame = CGRect(x: gimme.X(3),
-                              y: gimme.Y(3),
-                              width: gimme.Y(15),
-                              height: gimme.Y(15))
+        scoreView.frame = CGRect(x: gimme.X(3),
+                                 y: gimme.Y(3),
+                                 width: gimme.Y(15),
+                                 height: gimme.Y(15))
         
         subtitleLbl.sizeToFit()
         titleLbl.sizeToFit()

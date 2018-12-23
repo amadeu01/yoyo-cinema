@@ -17,101 +17,104 @@ final class CircularScoreView: UIView {
         didSet {
             trackingPathColor = UIColor(cgColor: scoreColor.cgColor)
                 .withAlphaComponent(0.3)
+            trackingPath.strokeColor = trackingPathColor.cgColor
+            scorePath.strokeColor = scoreColor.cgColor
         }
     }
     var trackingPathColor: UIColor = .lightGray
     var animationDuration: Double = 2
-    var finalScore: Float = 0
+    var finalScore: Float = 0 {
+        didSet {
+            textLabel.text = "\(Int(100*finalScore))%"
+        }
+    }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        initialize()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        initialize()
     }
+    
+    let scorePath = CAShapeLayer()
+    let trackingPath = CAShapeLayer()
+    let externalCircular = CAShapeLayer()
+    let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+    let textLabel = UILabel()
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+        layout()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
-        self.subviews.forEach { $0.removeFromSuperview() }
-        addCircularLayers()
-        addScoreText()
     }
     
-    func addCircularLayers() {
-        let radius = (frame.width/2) * 0.7
+    func initialize() {
+        self.layer.addSublayer(externalCircular)
+        self.layer.addSublayer(trackingPath)
+        self.layer.addSublayer(scorePath)
+        self.addSubview(textLabel)
+        
+        scorePath.lineWidth = 5
+        scorePath.strokeEnd = 0
+        scorePath.strokeColor = scoreColor.cgColor
+        scorePath.fillColor = UIColor.clear.cgColor
+        
+        externalCircular.lineCap = CAShapeLayerLineCap.round
+        externalCircular.fillColor = UIColor.lightDark.cgColor
+        externalCircular.lineWidth = 0
+        
+        trackingPath.lineCap = CAShapeLayerLineCap.round
+        trackingPath.fillColor = UIColor.clear.cgColor
+        trackingPath.strokeColor = trackingPathColor.cgColor
+        
+        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+        basicAnimation.isRemovedOnCompletion = false
+        basicAnimation.duration = animationDuration
+        
+        textLabel.textColor = .white
+        textLabel.textAlignment = .center
+        textLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+    }
     
+    func layout() {
+        let gimme = LayoutHelper(rect: bounds)
+        
+        let radius = (frame.width/2) * 0.8
+        
         let cicularExternal = UIBezierPath(
-            arcCenter: self.center,
+            arcCenter: bounds.center,
             radius: radius*1.2,
             startAngle: -CGFloat.pi/2,
             endAngle: 2 * CGFloat.pi - CGFloat.pi/2,
             clockwise: true)
         
         let cicularPath = UIBezierPath(
-            arcCenter: self.center,
+            arcCenter: bounds.center,
             radius: radius,
             startAngle: -CGFloat.pi/2,
             endAngle: 2 * CGFloat.pi - CGFloat.pi/2,
             clockwise: true)
         
-        let externalCircular = CAShapeLayer()
-        externalCircular.lineCap = CAShapeLayerLineCap.round
-        externalCircular.fillColor = UIColor.lightDark.cgColor
-        externalCircular.lineWidth = 0
         externalCircular.path = cicularExternal.cgPath
-        
-        let trackingPath = CAShapeLayer()
-        trackingPath.lineCap = CAShapeLayerLineCap.round
-        trackingPath.fillColor = UIColor.clear.cgColor
         trackingPath.lineWidth = 5
         trackingPath.path = cicularPath.cgPath
-        trackingPath.strokeColor = trackingPathColor.cgColor
         
-        let scorePath = CAShapeLayer()
         scorePath.lineCap = CAShapeLayerLineCap.round
-        scorePath.lineWidth = 5
-        scorePath.fillColor = UIColor.clear.cgColor
         scorePath.path = cicularPath.cgPath
-        scorePath.strokeEnd = 0
-        scorePath.strokeColor = scoreColor.cgColor
         
-        self.layer.addSublayer(externalCircular)
-        self.layer.addSublayer(trackingPath)
-        self.layer.addSublayer(scorePath)
-        
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
-        basicAnimation.isRemovedOnCompletion = false
-        
-        basicAnimation.duration = animationDuration
         basicAnimation.toValue = finalScore
-        
         scorePath.add(basicAnimation, forKey: "strokeEnd")
-    }
-    
-    func addScoreText() {
-        let textLabel = UILabel()
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.textColor = .white
-        textLabel.sizeToFit()
-        textLabel.textAlignment = .center
-        textLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
-        textLabel.text = "\(Int(100*finalScore))%"
         
-        self.addSubview(textLabel)
-        
-        textLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.top.equalToSuperview().inset(10)
-            make.bottom.equalToSuperview().inset(10)
-            make.leading.equalToSuperview().inset(10)
-            make.trailing.equalToSuperview().inset(10)
-        }
+        textLabel.frame = CGRect(x: 0,
+                                 y: 0,
+                                 width: bounds.width,
+                                 height: gimme.X(25))
+        textLabel.center = bounds.center
     }
 }

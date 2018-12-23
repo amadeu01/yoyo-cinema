@@ -54,17 +54,11 @@ open class LayoutHelper {
     }
 
     static open func XScreen(_ percentage: CGFloat) -> CGFloat {
-        
-        
             return percentage * UIScreen.main.bounds.height / 100
-        
     }
 
     static open func YScreen(_ percentage: CGFloat) -> CGFloat {
-        
-        
             return percentage * UIScreen.main.bounds.width / 100
-        
     }
 
 }
